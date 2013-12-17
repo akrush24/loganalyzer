@@ -1,5 +1,4 @@
 #!/usr/bin/perl -ws
-#
 $host = $ARGV[0];
 
 $input = $ARGV[1];
