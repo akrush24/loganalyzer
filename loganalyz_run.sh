@@ -36,8 +36,8 @@ ${SCRIPTDIR}/loganalyz.sh esx-06.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh esx-07.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh esx-08.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh esx-09.at-consulting.ru
-${SCRIPTDIR}/loganalyz.sh esx-11.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh esx-10.at-consulting.ru
+${SCRIPTDIR}/loganalyz.sh esx-11.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh esx-mcu.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh esx-epm.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh esx-p2v.at-consulting.ru
