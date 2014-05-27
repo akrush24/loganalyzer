@@ -46,7 +46,7 @@ fi
 ${SCRIPTDIR}/filter_esx.pl ${HOST} ${WORKDIR}/newlines_${HOST}_${LOGNAME} ${WORKDIR}/${HOST}_SendToMail
 
 # Notification
-if [ -s ${WORKDIR}/${HOST}_SendToMail ];then cat ${WORKDIR}/${HOST}_SendToMail|mailx -s "Found [`wc -l ${WORKDIR}/${HOST}_SendToMail | awk '{print $1}'`]: ${HOST}" ${MAILTO}; fi
+if [ -s ${WORKDIR}/${HOST}_SendToMail ];then cat ${WORKDIR}/${HOST}_SendToMail|mailx -s "Found [`wc -l ${WORKDIR}/${HOST}_SendToMail | awk '{print $1}'`]: ${HOST}" -r "LogAnalyses" ${MAILTO}; fi
 
 else
 	echo "file ${LOGDIR}/${LOGNAME} does't exist..."

@@ -38,6 +38,7 @@ ${SCRIPTDIR}/loganalyz.sh esx-08.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh esx-09.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh esx-10.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh esx-11.at-consulting.ru
+${SCRIPTDIR}/loganalyz.sh esx-18.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh esx-mcu.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh esx-epm.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh esx-p2v.at-consulting.ru
@@ -45,3 +46,5 @@ ${SCRIPTDIR}/loganalyz.sh esx-voip.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh ars-vm19.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh ars-vm11.at-consulting.ru
 ${SCRIPTDIR}/loganalyz.sh esx-s03
+${SCRIPTDIR}/loganalyz.sh esx-zproxy-r24.at-consuting.ru
+${SCRIPTDIR}/loganalyz.sh esx-zproxy-r39.at-consuting.ru
