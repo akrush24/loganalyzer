@@ -30,7 +30,12 @@ date
 
 if [ ! -d ${LOGDIR}/ ];then 
 	#echo " " | mailx -s "ERROR: No DIR ${LOGDIR}" ${MAILTO};
-	echo "ERROR: No DIR ${LOGDIR}" 
+	echo "WARNING: No DIR ${LOGDIR}"
+
+	if [ ! -d /zpool/${HOST}/ ];then
+		echo "ERROR: No DIR echo /zpool/${HOST}/"
+	fi
+		
  fi
 
 if [ -f ${LOGDIR}/${LOGNAME} ];then # If log files ${LOGDIR}/${LOGNAME} exist
@@ -46,7 +51,14 @@ fi
 ${SCRIPTDIR}/filter_esx.pl ${HOST} ${WORKDIR}/newlines_${HOST}_${LOGNAME} ${WORKDIR}/${HOST}_SendToMail
 
 # Notification
-if [ -s ${WORKDIR}/${HOST}_SendToMail ];then cat ${WORKDIR}/${HOST}_SendToMail|mailx -s "Found [`wc -l ${WORKDIR}/${HOST}_SendToMail | awk '{print $1}'`]: ${HOST}" -r "LogAnalyses" ${MAILTO}; fi
+if [ -s ${WORKDIR}/${HOST}_SendToMail ];then 
+	COUNT=`cat ${WORKDIR}/${HOST}_SendToMail|wc -l`; 
+	if [[ "$COUNT" -ge "1"  ]];then 
+		cat ${WORKDIR}/${HOST}_SendToMail|mailx -s "Found [`wc -l ${WORKDIR}/${HOST}_SendToMail | awk '{print $1}'`]: ${HOST}" -r "LogAnalyses" ${MAILTO}; 
+	fi
+	#echo  COUNT=$COUNT|mailx -s "count $HOST" ${MAILTO};
+
+fi
 
 else
 	echo "file ${LOGDIR}/${LOGNAME} does't exist..."
