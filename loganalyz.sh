@@ -53,7 +53,7 @@ ${SCRIPTDIR}/filter_esx.pl ${HOST} ${WORKDIR}/newlines_${HOST}_${LOGNAME} ${WORK
 # Notification
 if [ -s ${WORKDIR}/${HOST}_SendToMail ];then 
 	COUNT=`cat ${WORKDIR}/${HOST}_SendToMail|wc -l`; 
-	if [[ "$COUNT" -ge "1"  ]];then 
+	if [[ "$COUNT" -ge "4"  ]];then # >= 4
 		cat ${WORKDIR}/${HOST}_SendToMail|mailx -s "Found [`wc -l ${WORKDIR}/${HOST}_SendToMail | awk '{print $1}'`]: ${HOST}" -r "LogAnalyses" ${MAILTO}; 
 	fi
 	#echo  COUNT=$COUNT|mailx -s "count $HOST" ${MAILTO};
