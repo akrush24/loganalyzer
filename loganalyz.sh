@@ -5,7 +5,7 @@ if [[ -z $1 ]];then echo "HOST is empty...";exit 1;else HOST=$1;fi
 
 LOGNAME=vmkernel-`date +%Y-%m-%d`
 LOGDIR=/zpool/${HOST}/`date +%Y-%m`
-MAILTO=kav@at-consulting.ru
+MAILTO="kav@at-consulting.ru"
 WORKDIR=/zpool/tmp/
 SCRIPTDIR=/root/scripts/loganalyz
 
