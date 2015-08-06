@@ -53,7 +53,7 @@ ${SCRIPTDIR}/filter_esx.pl ${HOST} ${WORKDIR}/newlines_${HOST}_${LOGNAME} ${WORK
 # Notification
 if [ -s ${WORKDIR}/${HOST}_SendToMail ];then 
 	COUNT=`cat ${WORKDIR}/${HOST}_SendToMail|wc -l`; 
-	if [[ "$COUNT" -ge "5"  ]];then # >= 4
+	if [[ "$COUNT" -ge "10"  ]];then # >= 4
 		cat ${WORKDIR}/${HOST}_SendToMail|mailx -s "Found [`wc -l ${WORKDIR}/${HOST}_SendToMail | awk '{print $1}'`]: ${HOST}" -r "LogAnalyses" ${MAILTO}; 
 	fi
 	#echo  COUNT=$COUNT|mailx -s "count $HOST" ${MAILTO};
@@ -66,6 +66,9 @@ fi
 ;;
 
 esac
+
+# clear old file in work direcroty
+find ${WORKDIR} -type f -name ${HOST}_${LOGNAME}.* -mtime +7  -exec /bin/rm {} \;
 
 ;;
 esac

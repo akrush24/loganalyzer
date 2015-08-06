@@ -19,7 +19,8 @@ while(<IN>){
 	/iscsi_vmk/ || 
 	/PEG_HALT_STATUS1:\ 0x40006701,\ PEG_HALT_STATUS2/ || # NIC10G is Dead
 	/because\ its\ ramdisk\ \(tmp\)\ is\ full/ ||
-	/Host\ adapter\ abort\ request/
+	/Host\ adapter\ abort\ request/ ||
+	/is\ using\ my\ IP\ address/
   ) && 
 	!/UserObj/ && 
 	!/H:0x0 D:0x2 P:0x0/ && 
