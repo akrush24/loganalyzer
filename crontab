@@ -1,1 +1,0 @@
-*/15 * * * * /root/scripts/loganalyz/loganalyz_run.sh >> /var/log/loganalyz_run.sh.log

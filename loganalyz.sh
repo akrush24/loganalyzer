@@ -68,7 +68,7 @@ fi
 esac
 
 # clear old file in work direcroty
-find ${WORKDIR} -type f -name ${HOST}_${LOGNAME}.* -mtime +7  -exec /bin/rm {} \;
+find ${WORKDIR} -type f -name *${HOST}_* -mtime +1 -exec /bin/rm {} \;
 
 ;;
 esac
